@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>돈 룩 백 소감록 — 오아시스 싱어롱 상영회</title>
+<meta name="description" content="오아시스: 돈 룩 백 인 앵거 싱어롱 상영회 — 상영 전 기대와 상영 후 소감을 남겨주세요.">
+<meta property="og:title" content="돈 룩 백 소감록">
+<meta property="og:description" content="9/20(일) 12:30 롯데시네마 월드타워 · 오아시스 싱어롱 상영회 소감 남기기">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#f2ece1;
+    --ink-dim:#b9b0a0;
+    --ink-faint:#7d7566;
+    --ground:#0c0c0d;
+    --ground-raised:#161513;
+    --ground-card:#1b1917;
+    --line:#332f28;
+    --khaki:#8a9a5b;
+    --khaki-dim:#5f6a41;
+    --gold:#d7a92e;
+    --brick:#b0483a;
+    --focus:#d7a92e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Archivo",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Oswald","Archivo Black",system-ui,sans-serif; margin:0; text-transform:uppercase; letter-spacing:.01em;}
+  ::selection{background:var(--gold); color:#000;}
+  a{color:var(--gold);}
+  button{font-family:inherit;}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+  .wrap{max-width:720px; margin:0 auto; padding-inline:20px;}
+
+  /* ---------- header ---------- */
+  .masthead{
+    position:relative;
+    padding-block:36px 28px;
+    padding-inline:20px;
+    background:
+      radial-gradient(120% 90% at 15% -10%, rgba(138,154,91,.18), transparent 55%),
+      linear-gradient(180deg,#141311,#0c0c0d 78%);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .masthead::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px);
+    pointer-events:none;
+  }
+  .kicker{
+    display:flex; align-items:center; gap:8px;
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--khaki); margin-bottom:14px;
+  }
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--khaki); box-shadow:0 0 0 3px rgba(138,154,91,.25); animation:pulse 2s infinite;}
+  .kicker .dot.off{background:var(--brick); box-shadow:0 0 0 3px rgba(176,72,58,.25); animation:none;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+  .film-title{font-size:15px; color:var(--ink-dim); font-weight:400; margin-bottom:6px; letter-spacing:.02em;}
+  .event-title{
+    font-size:clamp(22px,7.4vw,42px);
+    line-height:1.05;
+    color:var(--ink);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .event-title em{font-style:normal; color:var(--gold);}
+  .event-meta{
+    margin-top:16px; display:flex; flex-wrap:wrap; gap:10px 18px;
+    font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-faint);
+  }
+  .event-meta b{color:var(--ink-dim); font-weight:500;}
+
+  /* phase toggle */
+  .phase-strip{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:12px 20px;
+    background:var(--ground-raised);
+    border-bottom:1px solid var(--line);
+    font-family:"JetBrains Mono",monospace; font-size:11px; color:var(--ink-faint);
+    flex-wrap:wrap;
+  }
+  .phase-strip .label{letter-spacing:.08em; text-transform:uppercase;}
+  .seg{display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden;}
+  .seg button{
+    border:0; background:transparent; color:var(--ink-faint);
+    padding:8px 16px; font-size:12.5px; cursor:pointer; letter-spacing:.02em;
+  }
+  .seg button.active{background:var(--khaki); color:#111; font-weight:700;}
+
+  /* ---------- sections ---------- */
+  section{padding-block:28px;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:16px;}
+  .section-head h2{font-size:20px; color:var(--ink);}
+  .section-head .count{font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-faint);}
+
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:20px;}
+  .stat-tile{
+    background:var(--ground-card); border:1px solid var(--line); border-radius:4px;
+    padding:14px 12px; min-width:0;
+  }
+  .stat-tile .num{font-family:"JetBrains Mono",monospace; font-size:24px; font-weight:700; color:var(--gold); line-height:1.15; overflow:hidden; text-overflow:ellipsis;}
+  .stat-tile .num.song{font-family:"Archivo",sans-serif; font-size:14px; line-height:1.3;}
+  .stat-tile .lbl{margin-top:6px; font-size:11px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em;}
+
+  .chart-card{
+    background:var(--ground-card); border:1px solid var(--line); border-radius:4px;
+    padding:18px 16px; margin-bottom:14px;
+  }
+  .chart-card h3{font-size:12px; color:var(--ink-dim); letter-spacing:.08em; margin-bottom:14px; font-weight:500; text-transform:uppercase; font-family:"JetBrains Mono",monospace;}
+  .bar-row{display:flex; align-items:center; gap:10px; margin-bottom:9px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-label{width:118px; flex:0 0 118px; font-size:12.5px; color:var(--ink-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .bar-track{flex:1; height:16px; border-radius:2px; position:relative; background:rgba(255,255,255,.04);}
+  .bar-fill{height:100%; border-radius:2px; background:linear-gradient(90deg,var(--khaki-dim),var(--khaki)); min-width:3px;}
+  .bar-fill.gold{background:linear-gradient(90deg,#8a6a1c,var(--gold));}
+  .bar-val{width:34px; flex:0 0 34px; text-align:right; font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-faint);}
+
+  .hist{display:flex; align-items:flex-end; gap:8px; height:110px; padding-top:8px;}
+  .hist-col{flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;}
+  .hist-bar{width:100%; max-width:46px; border-radius:3px 3px 0 0; background:linear-gradient(180deg,var(--gold),var(--khaki-dim));}
+  .hist-n{font-family:"JetBrains Mono",monospace; font-size:11px; color:var(--ink-faint);}
+  .hist-lbl{font-size:11px; color:var(--ink-dim);}
+
+  .avatar-stack-wrap{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  .avatar-stack{display:flex; align-items:center; flex-wrap:wrap; row-gap:6px;}
+  .avatar-stack .av{
+    width:36px; height:36px; border-radius:50%;
+    background:linear-gradient(135deg,var(--khaki),var(--khaki-dim));
+    display:flex; align-items:center; justify-content:center; font-size:16px;
+    border:2px solid var(--ground-card); margin-left:-12px;
+    box-shadow:0 1px 3px rgba(0,0,0,.5);
+  }
+  .avatar-stack .av:first-child{margin-left:0;}
+  .avatar-stack .av.more{
+    background:var(--ground-raised); color:var(--ink-dim);
+    font-family:"JetBrains Mono",monospace; font-size:11.5px; font-weight:700;
+  }
+  .avatar-total{font-size:13.5px; color:var(--ink-dim);}
+  .avatar-total b{font-family:"JetBrains Mono",monospace; color:var(--gold); font-size:18px; font-weight:700;}
+
+  /* feed */
+  .card{
+    background:var(--ground-card); border:1px solid var(--line); border-radius:4px;
+    padding:15px 16px; margin-bottom:10px;
+    animation:rise .35s ease;
+  }
+  @keyframes rise{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+  .card-top{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px;}
+  .card-name{font-weight:700; color:var(--ink); font-size:14px; word-break:break-word;}
+  .card-name.anon{color:var(--ink-faint); font-weight:500; font-style:italic;}
+  .card-time{font-family:"JetBrains Mono",monospace; font-size:11px; color:var(--ink-faint); flex:0 0 auto;}
+  .chips{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;}
+  .chip{
+    font-family:"JetBrains Mono",monospace; font-size:11px; padding:3px 9px; border-radius:999px;
+    border:1px solid var(--line); color:var(--khaki); background:rgba(138,154,91,.08);
+  }
+  .chip.gold{color:var(--gold); background:rgba(215,169,46,.08);}
+  .card-body{font-size:14px; line-height:1.55; color:var(--ink-dim); word-break:break-word; white-space:pre-wrap;}
+  .card-body b{color:var(--ink); font-weight:600;}
+  .empty-feed{color:var(--ink-faint); font-size:13px; padding:30px 0; text-align:center; border:1px dashed var(--line); border-radius:4px; line-height:1.7;}
+
+  /* form */
+  .form-section{background:var(--ground-raised); border-top:1px solid var(--line);}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block; font-size:12px; color:var(--ink-dim); margin-bottom:7px;
+    letter-spacing:.03em; font-weight:600;
+  }
+  .field .hint{color:var(--ink-faint); font-weight:400; font-size:11.5px; margin-left:6px;}
+  input[type=text], textarea, select{
+    width:100%; background:var(--ground-card); border:1px solid var(--line); color:var(--ink);
+    border-radius:4px; padding:11px 12px; font-size:16px; font-family:inherit;
+  }
+  input[type=text]:focus, textarea:focus, select:focus{
+    outline:2px solid var(--focus); outline-offset:1px; border-color:var(--focus);
+  }
+  textarea{resize:vertical; min-height:80px; line-height:1.5;}
+  select{appearance:none; background-image:linear-gradient(45deg,transparent 50%,var(--ink-faint) 50%),linear-gradient(135deg,var(--ink-faint) 50%,transparent 50%); background-position:calc(100% - 18px) center, calc(100% - 13px) center; background-size:5px 5px,5px 5px; background-repeat:no-repeat; padding-right:34px;}
+  .radio-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .radio-pill{
+    border:1px solid var(--line); border-radius:999px; padding:9px 15px; font-size:13.5px;
+    color:var(--ink-dim); cursor:pointer; display:flex; align-items:center; gap:7px; user-select:none;
+    background:var(--ground-card);
+  }
+  .radio-pill input{accent-color:var(--khaki); margin:0;}
+  .radio-pill.checked{border-color:var(--khaki); color:var(--ink); background:rgba(138,154,91,.1);}
+
+  .want-again{
+    display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; user-select:none;
+    border:1px solid var(--line); border-radius:4px; padding:13px 14px; background:var(--ground-card);
+  }
+  .want-again input{width:22px; height:22px; accent-color:var(--gold); flex:0 0 auto; margin:0;}
+  .want-again-text{display:flex; flex-direction:column; gap:4px;}
+  .want-again-text b{font-size:14.5px; color:var(--ink); font-weight:600;}
+  .want-again-text small{font-size:12px; color:var(--ink-faint); font-weight:400;}
+
+  .consent{
+    border:1px solid var(--line); border-radius:4px; padding:14px; background:var(--ground-card);
+    display:flex; gap:11px; align-items:flex-start; margin-bottom:18px;
+  }
+  .consent input{margin-top:3px; width:17px; height:17px; accent-color:var(--gold); flex:0 0 auto;}
+  .consent p{margin:0; font-size:13px; line-height:1.55; color:var(--ink-dim);}
+  .consent p b{color:var(--ink); font-weight:700;}
+
+  .submit-btn{
+    width:100%; border:0; border-radius:4px; padding:16px; font-size:15px; font-weight:700;
+    letter-spacing:.02em; text-transform:uppercase; cursor:pointer;
+    background:var(--gold); color:#181307;
+    transition:transform .12s ease, filter .12s ease;
+  }
+  .submit-btn:hover{filter:brightness(1.08);}
+  .submit-btn:active{transform:scale(.99);}
+  .submit-btn:disabled{background:var(--line); color:var(--ink-faint); cursor:not-allowed;}
+  .other-song-field{display:none;}
+  .other-song-field.show{display:block;}
+
+  .thanks-box{
+    border:1px solid var(--khaki); border-radius:4px; padding:22px 18px; text-align:center;
+    background:rgba(138,154,91,.08);
+  }
+  .thanks-box .big{font-size:17px; font-weight:700; color:var(--ink); margin-bottom:8px;}
+  .thanks-box p{margin:0 0 14px; font-size:13.5px; color:var(--ink-dim); line-height:1.6;}
+  .link-btn{background:none; border:0; color:var(--gold); text-decoration:underline; cursor:pointer; font-size:13px; padding:0;}
+
+  .status-banner{
+    margin:0 auto; max-width:720px;
+    background:rgba(176,72,58,.12); border:1px solid var(--brick); color:var(--ink-dim);
+    border-radius:4px; padding:12px 14px; font-size:13px; line-height:1.6;
+  }
+
+  .toast{
+    position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(10px);
+    background:var(--khaki); color:#0e130a; font-weight:700; font-size:13.5px;
+    padding:12px 20px; border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,.4);
+    opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    z-index:50; white-space:nowrap;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+  footer{
+    padding:26px 20px 40px; text-align:center; color:var(--ink-faint); font-size:11.5px;
+    font-family:"JetBrains Mono",monospace; letter-spacing:.03em; border-top:1px solid var(--line);
+    line-height:1.8;
+  }
+  footer a{color:var(--khaki);}
+
+  @media (prefers-reduced-motion: reduce){
+    .card{animation:none;} .kicker .dot{animation:none;} .toast{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="wrap" style="padding:0;">
+    <div class="kicker"><span class="dot" id="liveDot"></span><span id="kickerText">연결 중…</span></div>
+    <div class="film-title">오아시스: 돈 룩 백 인 앵거 — 싱어롱 상영회</div>
+    <h1 class="event-title">돈 룩 백 <em>소감록.</em></h1>
+    <div class="event-meta">
+      <span><b>9/20(일) 12:30</b></span>
+      <span>롯데시네마 월드타워 4관</span>
+      <span class="mono" id="totalTag">참여 0명</span>
+    </div>
+  </div>
+</div>
+
+<div class="phase-strip">
+  <span class="label">보고 계신 화면</span>
+  <div class="seg" role="group" aria-label="상영 전 / 상영 후 전환">
+    <button type="button" id="tabPre" class="active">상영 전</button>
+    <button type="button" id="tabPost">상영 후</button>
+  </div>
+</div>
+
+<div class="wrap" id="bannerWrap" style="padding-top:16px; display:none;">
+  <div class="status-banner" id="statusBanner"></div>
+</div>
+
+<div class="wrap">
+
+  <section id="statsSection">
+    <div class="section-head">
+      <h2 id="statsHeading">모두의 오아시스</h2>
+      <span class="count mono" id="statsCount">0건 집계</span>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="num" id="statParticipants">0</div>
+        <div class="lbl">참여 인원</div>
+      </div>
+      <div class="stat-tile">
+        <div class="num" id="statAvgViews">0.0</div>
+        <div class="lbl" id="statAvgViewsLbl">평균 관람 횟수</div>
+      </div>
+      <div class="stat-tile">
+        <div class="num song" id="statTopSong">—</div>
+        <div class="lbl" id="statTopSongLbl">최다 기대곡</div>
+      </div>
+    </div>
+
+    <div class="chart-card" id="histCard">
+      <h3>관람 횟수 분포</h3>
+      <div class="hist" id="histChart"></div>
+    </div>
+
+    <div class="chart-card" id="songCard">
+      <h3>가장 좋았던 장면의 곡 TOP 8</h3>
+      <div id="songChart"></div>
+    </div>
+
+    <div class="chart-card" id="singCard" hidden>
+      <h3>가장 크게 따라 불렀던 순간 TOP 8</h3>
+      <div id="singChart"></div>
+    </div>
+
+    <div class="chart-card" id="touchCard" hidden>
+      <h3>가장 감동받은 순간 TOP 8</h3>
+      <div id="touchChart"></div>
+    </div>
+
+    <div class="chart-card" id="postOnlyCard" hidden>
+      <h3>돈룩백 싱어롱 상영회 한번 더?</h3>
+      <div class="avatar-stack-wrap">
+        <div class="avatar-stack" id="avatarStack"></div>
+        <div class="avatar-total" id="avatarTotal"><b>0</b>명이 또 가고 싶어해요</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedSection">
+    <div class="section-head">
+      <h2 id="feedHeading">실시간 피드</h2>
+      <span class="count mono" id="feedCount">0개</span>
+    </div>
+    <div id="feed"></div>
+  </section>
+
+</div>
+
+<div class="form-section">
+  <div class="wrap">
+    <section id="formSection">
+      <div class="section-head">
+        <h2 id="formHeading">상영 전, 한마디</h2>
+      </div>
+
+      <div id="thanksBox" class="thanks-box" style="display:none;">
+        <div class="big">소감 남겨주셔서 고맙습니다 🎸</div>
+        <p>위 피드에서 다른 분들의 글도 함께 보실 수 있어요.</p>
+        <button type="button" class="link-btn" id="btnWriteAgain">하나 더 남기기</button>
+      </div>
+
+      <form id="entryForm">
+        <div class="field">
+          <label for="fNickname">닉네임 <span class="hint">선택 — 비워두면 '익명 관객'으로 표시</span></label>
+          <input type="text" id="fNickname" maxlength="20" placeholder="예) 슈퍼소닉조아" autocomplete="off">
+        </div>
+
+        <div class="field" id="fieldViews">
+          <label for="fViews">오늘까지 이 영화 몇 번째 관람이세요?</label>
+          <select id="fViews">
+            <option value="1">오늘 처음이에요</option>
+            <option value="2">2번째</option>
+            <option value="3">3번째</option>
+            <option value="4">4번째</option>
+            <option value="5+">5번 이상</option>
+          </select>
+        </div>
+
+        <div class="field" id="fieldSong">
+          <label for="fSong">가장 좋았던 장면의 곡은?</label>
+          <select id="fSong"></select>
+          <div class="other-song-field" id="otherSongWrap" style="margin-top:9px;">
+            <input type="text" id="fSongOther" maxlength="30" placeholder="곡 제목을 적어주세요">
+          </div>
+        </div>
+
+        <div class="field" id="fieldReason">
+          <label for="fReason">그 장면이 왜 좋았는지 / 무엇을 기대하는지</label>
+          <textarea id="fReason" maxlength="300" placeholder="예) 수퍼소닉 나올 때부터 이미 심장 터질 것 같음"></textarea>
+        </div>
+
+        <div class="field" id="fieldPostFeeling" hidden>
+          <label for="fPostFeeling">오늘 싱어롱, 소감 한 줄</label>
+          <textarea id="fPostFeeling" maxlength="300" placeholder="예) 샴페인 슈퍼노바에서 다 같이 부르는데 눈물 남"></textarea>
+        </div>
+        <div class="field" id="fieldPostSing" hidden>
+          <label for="fPostSing">가장 크게 따라 불렀던 순간, 어떤 곡이었나요?</label>
+          <select id="fPostSing"></select>
+          <div class="other-song-field" id="otherSingWrap" style="margin-top:9px;">
+            <input type="text" id="fPostSingOther" maxlength="30" placeholder="곡 제목을 적어주세요">
+          </div>
+        </div>
+        <div class="field" id="fieldPostTouch" hidden>
+          <label for="fPostTouch">가장 감동받은 순간, 어떤 곡이었나요?</label>
+          <select id="fPostTouch"></select>
+          <div class="other-song-field" id="otherTouchWrap" style="margin-top:9px;">
+            <input type="text" id="fPostTouchOther" maxlength="30" placeholder="곡 제목을 적어주세요">
+          </div>
+        </div>
+        <div class="field" id="fieldWantAgain" hidden>
+          <label class="want-again">
+            <span class="want-again-text"><b>돈룩백 싱어롱 상영회 한번 더?</b><small>한번 더 참여하고 싶다면 체크해주세요</small></span>
+            <input type="checkbox" id="fWantAgain">
+          </label>
+        </div>
+
+        <div class="field">
+          <label>표기 방식</label>
+          <div class="radio-row" id="displayRadios">
+            <label class="radio-pill checked"><input type="radio" name="fDisplay" value="nickname" checked><span>닉네임으로 표시</span></label>
+            <label class="radio-pill"><input type="radio" name="fDisplay" value="anon"><span>익명으로 표시</span></label>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="fConsent" required>
+          <p><b>작성한 내용이 이 페이지에 공개되고, 다큐멘터리 제작팀에 전달되는 것에 동의합니다.</b> 동의하셔야 글을 남기실 수 있어요.</p>
+        </label>
+
+        <button type="submit" class="submit-btn" id="submitBtn">소감 남기기</button>
+      </form>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="padding:0;">
+    이 페이지의 소감은 실시간으로 공개되며, 동의하신 내용은 다큐멘터리 제작팀에 전달됩니다.<br>
+    cafe.daum.net/oasislife · takeme
+  </div>
+</footer>
+
+<div class="toast" id="toast">소감이 등록됐어요 🎸</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     설정
+     ============================================================ */
+  var DB_URL = "https://oasis-singalong-default-rtdb.asia-southeast1.firebasedatabase.app";
+  // 이 시각을 지나면 기본 화면이 '상영 후'로 바뀝니다 (한국시간 기준).
+  var POST_SWITCH_AT = new Date("2026-09-20T14:30:00+09:00").getTime();
+
+  var SONGS = ["Half the World Away","Whatever","Hello","Bring It On Down","Some Might Say","Slide Away","Acquiesce","Little by Little","Roll With It","Supersonic","Talk Tonight","Rock 'n' Roll Star","Wonderwall","Live Forever","Cigarettes & Alcohol","Don't Look Back in Anger","Champagne Supernova","Listen Up"];
+  var AGAIN_EMOJIS = ["🙌","🎸","🔥","✋","🙋","🤘","🎶","✌️"];
+  var LS_KEY = "dlbia_submitted_v1";
+
+  /* ============================================================
+     상태
+     ============================================================ */
+  var state = {
+    phase: Date.now() >= POST_SWITCH_AT ? "post" : "pre",
+    entries: [],
+    connected: false,
+    loaded: false
+  };
+
+  var db = null;
+
+  /* ============================================================
+     유틸
+     ============================================================ */
+  function $(id){ return document.getElementById(id); }
+  function esc(s){
+    var d = document.createElement("div");
+    d.textContent = s == null ? "" : s;
+    return d.innerHTML;
+  }
+  function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  function timeAgo(ts){
+    if(!ts) return "";
+    var min = Math.floor((Date.now() - ts) / 60000);
+    if(min < 1) return "방금 전";
+    if(min < 60) return min + "분 전";
+    var hr = Math.floor(min/60);
+    if(hr < 24) return hr + "시간 전";
+    return Math.floor(hr/24) + "일 전";
+  }
+  function showToast(msg){
+    var t = $("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(function(){ t.classList.remove("show"); }, 2400);
+  }
+  function banner(msg){
+    if(!msg){ $("bannerWrap").style.display = "none"; return; }
+    $("statusBanner").innerHTML = msg;
+    $("bannerWrap").style.display = "";
+  }
+  function hasSubmitted(phase){
+    try{
+      var raw = localStorage.getItem(LS_KEY);
+      if(!raw) return false;
+      return JSON.parse(raw)[phase] === true;
+    }catch(e){ return false; }
+  }
+  function markSubmitted(phase){
+    try{
+      var raw = localStorage.getItem(LS_KEY);
+      var obj = raw ? JSON.parse(raw) : {};
+      obj[phase] = true;
+      localStorage.setItem(LS_KEY, JSON.stringify(obj));
+    }catch(e){}
+  }
+
+  /* ============================================================
+     곡 선택 드롭다운 채우기
+     ============================================================ */
+  function fillSongSelect(sel){
+    var html = SONGS.map(function(s){ return '<option>' + esc(s) + '</option>'; }).join("");
+    html += '<option value="__other__">기타 (직접 입력)</option>';
+    sel.innerHTML = html;
+  }
+  ["fSong","fPostSing","fPostTouch"].forEach(function(id){ fillSongSelect($(id)); });
+
+  /* ============================================================
+     Firebase 연결
+     ============================================================ */
+  function initFirebase(){
+    try{
+      firebase.initializeApp({ databaseURL: DB_URL });
+      db = firebase.database();
+    }catch(e){
+      banner("데이터베이스에 연결하지 못했습니다. 잠시 후 새로고침 해주세요.");
+      return;
+    }
+
+    db.ref(".info/connected").on("value", function(snap){
+      state.connected = snap.val() === true;
+      renderKicker();
+    });
+
+    db.ref("entries").on("value", function(snap){
+      var val = snap.val() || {};
+      var list = [];
+      Object.keys(val).forEach(function(k){
+        var e = val[k];
+        if(e && (e.phase === "pre" || e.phase === "post")) { e._id = k; list.push(e); }
+      });
+      list.sort(function(a,b){ return (b.ts||0) - (a.ts||0); });
+      state.entries = list;
+      state.loaded = true;
+      banner("");
+      render();
+    }, function(err){
+      banner("데이터를 불러오지 못했습니다. (" + esc(err.code || "error") + ") 새로고침 해주세요.");
+      renderKicker();
+    });
+  }
+
+  /* ============================================================
+     렌더링
+     ============================================================ */
+  function currentList(){
+    return state.entries.filter(function(e){ return e.phase === state.phase; });
+  }
+
+  function renderKicker(){
+    var dot = $("liveDot");
+    var txt = $("kickerText");
+    if(state.connected){
+      dot.classList.remove("off");
+      txt.textContent = state.phase === "pre" ? "상영 전 · 지금 실시간으로 모이는 중" : "상영 후 · 소감이 쌓이는 중";
+    } else {
+      dot.classList.add("off");
+      txt.textContent = "연결 중…";
+    }
+  }
+
+  function bar(label, val, max, cls){
+    var pct = max > 0 ? Math.max(3, Math.round((val/max)*100)) : 3;
+    return '<div class="bar-row"><div class="bar-label" title="'+esc(label)+'">'+esc(label)+'</div>'+
+      '<div class="bar-track"><div class="bar-fill '+(cls||'')+'" style="width:'+pct+'%"></div></div>'+
+      '<div class="bar-val mono">'+val+'</div></div>';
+  }
+
+  function tally(list, key){
+    var counts = {};
+    list.forEach(function(d){ if(d[key]) counts[d[key]] = (counts[d[key]]||0)+1; });
+    return Object.keys(counts).map(function(k){ return [k, counts[k]]; })
+      .sort(function(a,b){ return b[1]-a[1]; }).slice(0,8);
+  }
+
+  function renderTop(el, top){
+    var max = top.length ? top[0][1] : 0;
+    el.innerHTML = top.length
+      ? top.map(function(e){ return bar(e[0], e[1], max, "gold"); }).join("")
+      : '<div class="empty-feed" style="padding:18px 0;">아직 데이터가 없어요</div>';
+  }
+
+  function render(){
+    var isPre = state.phase === "pre";
+    var data = currentList();
+
+    $("tabPre").classList.toggle("active", isPre);
+    $("tabPost").classList.toggle("active", !isPre);
+    renderKicker();
+
+    $("totalTag").textContent = "참여 " + state.entries.length + "명";
+    $("statsHeading").textContent = isPre ? "상영 전, 모두의 기대" : "상영 후, 모두의 소감";
+    $("statsCount").textContent = data.length + "건 집계";
+    $("statParticipants").textContent = data.length;
+    $("feedHeading").textContent = isPre ? "실시간 기대평 피드" : "실시간 소감 피드";
+    $("formHeading").textContent = isPre ? "상영 전, 한마디" : "상영 후, 한마디";
+
+    $("fieldViews").hidden = !isPre;
+    $("fieldSong").hidden = !isPre;
+    $("fieldReason").hidden = !isPre;
+    $("fieldPostFeeling").hidden = isPre;
+    $("fieldPostSing").hidden = isPre;
+    $("fieldPostTouch").hidden = isPre;
+    $("fieldWantAgain").hidden = isPre;
+    $("postOnlyCard").hidden = isPre;
+    $("histCard").hidden = !isPre;
+    $("songCard").hidden = !isPre;
+    $("singCard").hidden = isPre;
+    $("touchCard").hidden = isPre;
+
+    if(isPre){
+      var topSongs = tally(data, "song");
+      renderTop($("songChart"), topSongs);
+      $("statTopSong").textContent = topSongs.length ? topSongs[0][0] : "—";
+      $("statTopSongLbl").textContent = "최다 기대곡";
+
+      var cats = ["1","2","3","4","5+"];
+      var counts = {"1":0,"2":0,"3":0,"4":0,"5+":0};
+      var totalViews = 0, sample = 0;
+      data.forEach(function(d){
+        if(counts[d.views] !== undefined){
+          counts[d.views] += 1;
+          totalViews += (d.views === "5+" ? 5 : parseInt(d.views,10));
+          sample++;
+        }
+      });
+      var maxView = Math.max.apply(null, cats.map(function(k){ return counts[k]; }));
+      $("histChart").innerHTML = cats.map(function(k){
+        var v = counts[k];
+        var h = maxView > 0 ? Math.max(6, Math.round((v/maxView)*90)) : 6;
+        return '<div class="hist-col"><div class="hist-n mono">'+v+'</div><div class="hist-bar" style="height:'+h+'px"></div><div class="hist-lbl">'+k+'회</div></div>';
+      }).join("");
+      $("statAvgViews").textContent = sample ? (totalViews/sample).toFixed(1) : "0.0";
+      $("statAvgViews").classList.remove("song");
+      $("statAvgViewsLbl").textContent = "평균 관람 횟수";
+    } else {
+      var topSing = tally(data, "singMoment");
+      var topTouch = tally(data, "touchMoment");
+      renderTop($("singChart"), topSing);
+      renderTop($("touchChart"), topTouch);
+      $("statAvgViews").textContent = topSing.length ? topSing[0][0] : "—";
+      $("statAvgViews").classList.add("song");
+      $("statAvgViewsLbl").textContent = "최다 떼창 순간";
+      $("statTopSong").textContent = topTouch.length ? topTouch[0][0] : "—";
+      $("statTopSongLbl").textContent = "최다 감동 순간";
+
+      var again = data.filter(function(d){ return d.wantAgain; });
+      var MAX_SHOW = 16;
+      var html = again.slice(0, MAX_SHOW).map(function(d){
+        return '<div class="av">' + (d.emoji || "🙌") + '</div>';
+      }).join("");
+      if(again.length > MAX_SHOW) html += '<div class="av more">+' + (again.length - MAX_SHOW) + '</div>';
+      $("avatarStack").innerHTML = html || '<div class="empty-feed" style="border:none; padding:6px 0;">아직 체크한 분이 없어요</div>';
+      $("avatarTotal").innerHTML = '<b>' + again.length + '</b>명이 또 가고 싶어해요';
+    }
+
+    // feed
+    $("feedCount").textContent = data.length + "개";
+    if(!data.length){
+      $("feed").innerHTML = '<div class="empty-feed">' +
+        (state.loaded ? '아직 등록된 글이 없어요.<br>첫 번째로 남겨보세요!' : '불러오는 중…') + '</div>';
+    } else {
+      $("feed").innerHTML = data.map(function(d){
+        var isAnon = d.display === "anon";
+        var name = isAnon ? "익명 관객" : (d.name || "익명 관객");
+        var chips = "";
+        if(d.phase === "pre"){
+          chips = '<span class="chip">' + esc(d.views === "1" ? "오늘 처음" : d.views + "번째 관람") + '</span>' +
+                  (d.song ? '<span class="chip">' + esc(d.song) + '</span>' : '');
+        } else if(d.wantAgain){
+          chips = '<span class="chip gold">' + (d.emoji || "🙌") + ' 한번 더 가고 싶어요</span>';
+        }
+        var body = esc(d.text || "");
+        if(d.phase === "post"){
+          if(d.singMoment) body += '<br><b>가장 크게 따라 불렀던 순간</b> — ' + esc(d.singMoment);
+          if(d.touchMoment) body += '<br><b>가장 감동받은 순간</b> — ' + esc(d.touchMoment);
+        }
+        return '<div class="card"><div class="card-top">' +
+          '<span class="card-name' + (isAnon ? " anon" : "") + '">' + esc(name) + '</span>' +
+          '<span class="card-time mono">' + timeAgo(d.ts) + '</span></div>' +
+          (chips ? '<div class="chips">' + chips + '</div>' : '') +
+          '<div class="card-body">' + body + '</div></div>';
+      }).join("");
+    }
+
+    // form vs thanks
+    var done = hasSubmitted(state.phase);
+    $("entryForm").style.display = done ? "none" : "";
+    $("thanksBox").style.display = done ? "" : "none";
+  }
+
+  /* ============================================================
+     이벤트 바인딩
+     ============================================================ */
+  function setPhase(p){
+    if(state.phase === p) return;
+    state.phase = p;
+    render();
+  }
+  $("tabPre").addEventListener("click", function(){ setPhase("pre"); });
+  $("tabPost").addEventListener("click", function(){ setPhase("post"); });
+
+  [["fSong","otherSongWrap"],["fPostSing","otherSingWrap"],["fPostTouch","otherTouchWrap"]].forEach(function(pair){
+    $(pair[0]).addEventListener("change", function(){
+      $(pair[1]).classList.toggle("show", $(pair[0]).value === "__other__");
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="fDisplay"]'), function(r){
+    r.addEventListener("change", function(){
+      Array.prototype.forEach.call(document.querySelectorAll('#displayRadios .radio-pill'), function(p){ p.classList.remove("checked"); });
+      r.closest(".radio-pill").classList.add("checked");
+    });
+  });
+
+  $("btnWriteAgain").addEventListener("click", function(){
+    $("thanksBox").style.display = "none";
+    $("entryForm").style.display = "";
+  });
+
+  function resolveSong(selId, otherId){
+    var v = $(selId).value;
+    if(v === "__other__") return $(otherId).value.trim() || "기타";
+    return v;
+  }
+
+  $("entryForm").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    if(!db){ showToast("연결 중입니다. 잠시 후 다시 시도해주세요"); return; }
+
+    var consent = $("fConsent");
+    if(!consent.checked){ consent.focus(); return; }
+
+    var btn = $("submitBtn");
+    btn.disabled = true;
+    btn.textContent = "등록 중…";
+
+    var display = document.querySelector('input[name="fDisplay"]:checked').value;
+    var nickname = $("fNickname").value.trim();
+    var isPre = state.phase === "pre";
+
+    var entry = {
+      phase: state.phase,
+      display: display,
+      name: display === "anon" ? "익명 관객" : (nickname || "익명 관객"),
+      ts: firebase.database.ServerValue.TIMESTAMP
+    };
+
+    if(isPre){
+      entry.views = $("fViews").value;
+      entry.song = resolveSong("fSong","fSongOther");
+      entry.text = ($("fReason").value.trim() || "").slice(0,300);
+    } else {
+      entry.text = ($("fPostFeeling").value.trim() || "").slice(0,300);
+      entry.singMoment = resolveSong("fPostSing","fPostSingOther");
+      entry.touchMoment = resolveSong("fPostTouch","fPostTouchOther");
+      entry.wantAgain = $("fWantAgain").checked;
+      if(entry.wantAgain) entry.emoji = pick(AGAIN_EMOJIS);
+    }
+
+    db.ref("entries").push(entry)
+      .then(function(){
+        markSubmitted(state.phase);
+        $("entryForm").reset();
+        Array.prototype.forEach.call(document.querySelectorAll(".other-song-field"), function(el){ el.classList.remove("show"); });
+        Array.prototype.forEach.call(document.querySelectorAll('#displayRadios .radio-pill'), function(p,i){ p.classList.toggle("checked", i===0); });
+        showToast(isPre ? "기대평이 등록됐어요 🎸" : "소감이 등록됐어요 🎸");
+        render();
+        window.scrollTo({ top:0, behavior:"smooth" });
+      })
+      .catch(function(err){
+        showToast("등록에 실패했어요. 다시 시도해주세요");
+        banner("등록 중 오류가 발생했습니다. (" + esc(err.code || "error") + ")");
+      })
+      .then(function(){
+        btn.disabled = false;
+        btn.textContent = "소감 남기기";
+      });
+  });
+
+  // 시간 지나면 자동으로 상영 후 탭으로 (사용자가 직접 바꾸기 전까지)
+  var userTouchedTab = false;
+  $("tabPre").addEventListener("click", function(){ userTouchedTab = true; });
+  $("tabPost").addEventListener("click", function(){ userTouchedTab = true; });
+  setInterval(function(){
+    if(!userTouchedTab && state.phase === "pre" && Date.now() >= POST_SWITCH_AT){
+      setPhase("post");
+    }
+    render();
+  }, 60000);
+
+  /* ============================================================
+     시작
+     ============================================================ */
+  render();
+  initFirebase();
+})();
+</script>
+</body>
+</html>
