@@ -249,6 +249,23 @@
   .thanks-box p{margin:0 0 14px; font-size:13.5px; color:var(--ink-dim); line-height:1.6;}
   .link-btn{background:none; border:0; color:var(--hi); text-decoration:underline; cursor:pointer; font-size:13px; padding:0;}
 
+  /* 사진·영상 공유 안내 */
+  .share-section{border-top:1px solid var(--line);}
+  .share-box{
+    border:1px solid var(--line); border-radius:4px;
+    background:var(--ground-card); padding:20px 18px;
+  }
+  .share-box p{margin:0 0 12px; font-size:14.5px; line-height:1.65; color:var(--ink);}
+  .share-box p.small{font-size:13px; color:var(--ink-dim); line-height:1.7;}
+  .share-box p:last-of-type{margin-bottom:18px;}
+  .share-btn{
+    display:block; text-align:center; text-decoration:none;
+    background:var(--hi); color:var(--on-hi);
+    font-weight:800; font-size:15px; letter-spacing:.02em;
+    padding:15px; border-radius:4px;
+  }
+  .share-btn:hover{filter:brightness(.92);}
+
   .status-banner{
     margin:0 auto; max-width:720px;
     background:rgba(176,72,58,.12); border:1px solid var(--brick); color:var(--ink-dim);
@@ -332,7 +349,7 @@
     </div>
 
     <div class="chart-card" id="songCard">
-      <h3>가장 좋았던 장면의 곡 TOP 8</h3>
+      <h3>가장 좋았던 · 기대하는 장면의 곡 TOP 8</h3>
       <div id="songChart"></div>
     </div>
 
@@ -396,7 +413,7 @@
         </div>
 
         <div class="field" id="fieldSong">
-          <label for="fSong">가장 좋았던 장면의 곡은?</label>
+          <label for="fSong">가장 좋았던 장면 또는 오늘 가장 기대하는 장면의 곡은?</label>
           <select id="fSong"></select>
           <div class="other-song-field" id="otherSongWrap" style="margin-top:9px;">
             <input type="text" id="fSongOther" maxlength="30" placeholder="곡 제목을 적어주세요">
@@ -448,6 +465,22 @@
 
         <button type="submit" class="submit-btn" id="submitBtn">소감 남기기</button>
       </form>
+    </section>
+  </div>
+</div>
+
+<div class="share-section">
+  <div class="wrap">
+    <section>
+      <div class="section-head">
+        <h2>오늘의 추억 나누기</h2>
+      </div>
+      <div class="share-box">
+        <p>오늘의 추억(사진·영상)을 아래 오픈채팅 단체방에 올려주세요.</p>
+        <p class="small">올려주신 사진·영상은 방에 계신 모든 분께 공개되고, 후필즈카페/트위터 등에 공유되거나 다큐멘터리 제작팀에 전달될 수 있습니다. 공개를 원치 않으시면 말씀해 주세요. 바로 빼드립니다.</p>
+        <p class="small">다른 관객분 얼굴이 크게 나온 사진은 한 번 더 살펴봐 주시고, 상영 중 영화 스크린 촬영은 삼가주세요.</p>
+        <a class="share-btn" href="https://open.kakao.com/o/gv07itOi" target="_blank" rel="noopener">오픈채팅 단체방 열기</a>
+      </div>
     </section>
   </div>
 </div>
